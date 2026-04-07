@@ -1,0 +1,316 @@
+.onboardingPage {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--color-bg);
+  padding: var(--space-6);
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.onboardingHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-6);
+}
+
+.onboardingLogo {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-family: var(--font-display);
+  font-size: var(--text-lg);
+  color: var(--color-text-primary);
+  text-decoration: none;
+}
+
+.onboardingLogo strong {
+  color: var(--color-accent);
+}
+
+.onboardingStepLabel {
+  font-size: var(--text-sm);
+  color: var(--color-text-tertiary);
+  font-weight: 500;
+}
+
+/* Progress Bar */
+.progressBar {
+  width: 100%;
+  height: 4px;
+  background: var(--color-border);
+  border-radius: var(--radius-full);
+  margin-bottom: var(--space-8);
+  overflow: hidden;
+}
+
+.progressFill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--color-accent), var(--color-gold));
+  border-radius: var(--radius-full);
+  transition: width 0.5s var(--ease-out);
+}
+
+/* Steps Nav */
+.stepsNav {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-1);
+  margin-bottom: var(--space-10);
+}
+
+.stepNav {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-4);
+  border-radius: var(--radius-full);
+  font-size: var(--text-sm);
+  color: var(--color-text-tertiary);
+  transition: all var(--duration-normal) var(--ease-out);
+}
+
+.stepActive {
+  color: var(--color-text-primary);
+  background: var(--color-surface-glass);
+  border: 1px solid var(--color-border);
+}
+
+.stepDone {
+  color: var(--color-accent);
+}
+
+.stepNavIcon {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--text-sm);
+}
+
+.stepNavLabel {
+  display: none;
+}
+
+@media (min-width: 640px) {
+  .stepNavLabel {
+    display: inline;
+  }
+}
+
+/* Step Content */
+.stepContent {
+  flex: 1;
+}
+
+.stepForm {
+  animation: fadeInUp 0.4s var(--ease-out);
+}
+
+.stepHeader {
+  margin-bottom: var(--space-8);
+}
+
+.stepHeader h2 {
+  font-size: var(--text-2xl);
+  margin-bottom: var(--space-2);
+}
+
+.stepHeader p {
+  color: var(--color-text-secondary);
+}
+
+/* Form layout */
+.formGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-5);
+}
+
+@media (min-width: 640px) {
+  .formGrid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.formFull {
+  grid-column: 1 / -1;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.formGroup label {
+  font-size: var(--text-sm);
+  font-weight: 500;
+  color: var(--color-text-secondary);
+}
+
+.req {
+  color: var(--color-error);
+}
+
+.fieldHint {
+  font-size: var(--text-xs);
+  color: var(--color-text-tertiary);
+  margin-top: 2px;
+}
+
+/* Radio cards */
+.radioCards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}
+
+.radioCard {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-3) var(--space-4);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: all var(--duration-fast) var(--ease-out);
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+  background: var(--color-surface);
+}
+
+.radioCard input {
+  display: none;
+}
+
+.radioCard:hover {
+  border-color: var(--color-border-hover);
+}
+
+.radioCardActive {
+  border-color: var(--color-accent) !important;
+  background: var(--color-accent-glow);
+  color: var(--color-accent);
+}
+
+.radioCardIcon {
+  font-size: var(--text-lg);
+}
+
+/* Input with prefix */
+.inputWithPrefix {
+  position: relative;
+}
+
+.inputPrefix {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--color-text-tertiary);
+  font-weight: 500;
+  font-size: var(--text-base);
+  z-index: 1;
+}
+
+/* Info card */
+.infoCard {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  padding: var(--space-4);
+  background: var(--color-surface-glass);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+}
+
+.infoCard svg {
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.infoCard strong {
+  display: block;
+  font-size: var(--text-sm);
+  color: var(--color-text-primary);
+  margin-bottom: 4px;
+}
+
+.infoCard p {
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+  line-height: 1.5;
+}
+
+/* Review */
+.reviewSections {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.reviewSection {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.reviewSection h3 {
+  padding: var(--space-4) var(--space-5);
+  font-size: var(--text-md);
+  background: var(--color-surface-glass);
+  border-bottom: 1px solid var(--color-border);
+  color: var(--color-text-primary);
+}
+
+.reviewItems {
+  padding: var(--space-2) var(--space-5);
+}
+
+.reviewItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-3) 0;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.reviewItem:last-child {
+  border-bottom: none;
+}
+
+.reviewLabel {
+  font-size: var(--text-sm);
+  color: var(--color-text-tertiary);
+}
+
+.reviewValue {
+  font-size: var(--text-sm);
+  color: var(--color-text-primary);
+  font-weight: 500;
+  text-align: right;
+}
+
+/* Step actions */
+.stepActions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  padding-top: var(--space-8);
+  margin-top: var(--space-8);
+  border-top: 1px solid var(--color-border);
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
