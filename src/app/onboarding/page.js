@@ -40,8 +40,22 @@ export default function OnboardingPage() {
 
   const handleSubmit = async () => {
     setSubmitting(true);
-    // In production, this sends to the backend API
-    await new Promise((r) => setTimeout(r, 2000));
+    try {
+      const response = await fetch('/api/applications', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
+
+      if (!response.ok) {
+        // Fallback: if API fails (no Supabase), still navigate
+        console.warn('API call failed, proceeding with demo flow');
+      }
+    } catch {
+      // Graceful fallback for demo mode
+      console.warn('API unavailable, proceeding with demo flow');
+    }
+    await new Promise((r) => setTimeout(r, 1000));
     router.push('/onboarding/status');
   };
 
