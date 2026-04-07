@@ -1,0 +1,160 @@
+.cardWrapper {
+  perspective: 1000px;
+  display: flex;
+  justify-content: center;
+}
+
+.card {
+  position: relative;
+  width: 380px;
+  max-width: 100%;
+  aspect-ratio: 1.586;
+  border-radius: var(--radius-xl);
+  background: linear-gradient(145deg, #0A2E1F 0%, #1B4D3E 40%, #134233 70%, #0A2E1F 100%);
+  background-size: 300% 300%;
+  animation: gradient-shift 8s ease infinite;
+  border: 1px solid rgba(0, 214, 143, 0.2);
+  overflow: hidden;
+  box-shadow:
+    0 25px 50px rgba(0, 0, 0, 0.5),
+    0 0 80px rgba(0, 214, 143, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  transform: rotateY(-5deg) rotateX(3deg);
+  transition: transform 0.6s var(--ease-out);
+}
+
+.card:hover {
+  transform: rotateY(0deg) rotateX(0deg) scale(1.02);
+}
+
+.cardGlow {
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, rgba(0, 214, 143, 0.15) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.cardContent {
+  position: relative;
+  z-index: 2;
+  padding: 28px 28px 24px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.cardTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.cardLogo {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  color: var(--color-accent);
+}
+
+.cardBrand {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: var(--text-base);
+  letter-spacing: 0.04em;
+  color: var(--color-text-primary);
+}
+
+.contactless {
+  color: var(--color-text-secondary);
+  opacity: 0.6;
+}
+
+.chip {
+  margin: var(--space-2) 0;
+}
+
+.cardNumber {
+  display: flex;
+  gap: var(--space-4);
+  font-family: var(--font-mono);
+  font-weight: 500;
+  font-size: var(--text-lg);
+  color: rgba(255, 255, 255, 0.5);
+  letter-spacing: 0.1em;
+}
+
+.lastFour {
+  color: var(--color-text-primary);
+}
+
+.cardBottom {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+.cardHolder, .cardExpiry {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.cardLabel {
+  font-family: var(--font-display);
+  font-size: 9px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: rgba(255, 255, 255, 0.35);
+}
+
+.cardValue {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: var(--text-sm);
+  color: var(--color-text-primary);
+  letter-spacing: 0.06em;
+}
+
+.network {
+  opacity: 0.9;
+}
+
+/* Shimmer animation */
+.shimmer {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  background: linear-gradient(
+    105deg,
+    transparent 30%,
+    rgba(255, 255, 255, 0.05) 45%,
+    rgba(255, 255, 255, 0.08) 50%,
+    rgba(255, 255, 255, 0.05) 55%,
+    transparent 70%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 4s ease-in-out infinite;
+  pointer-events: none;
+  border-radius: inherit;
+}
+
+@media (max-width: 480px) {
+  .card {
+    width: 320px;
+    transform: rotateY(0deg) rotateX(0deg);
+  }
+
+  .cardContent {
+    padding: 20px 20px 18px;
+  }
+
+  .cardNumber {
+    font-size: var(--text-base);
+    gap: var(--space-3);
+  }
+}
