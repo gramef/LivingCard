@@ -10,10 +10,10 @@ export function createClient() {
     // Return a mock client when Supabase isn't configured
     return {
       auth: {
-        getUser: async () => ({ data: { user: null }, error: null }),
-        getSession: async () => ({ data: { session: null }, error: null }),
-        signUp: async () => ({ data: null, error: { message: 'Supabase not configured' } }),
-        signInWithPassword: async () => ({ data: null, error: { message: 'Supabase not configured' } }),
+        getUser: async () => ({ data: { user: { id: 'mock-id', email: 'demo@livingcard.ca', user_metadata: { first_name: 'Demo', last_name: 'User' } } }, error: null }),
+        getSession: async () => ({ data: { session: { user: { id: 'mock-id' } } }, error: null }),
+        signUp: async () => ({ data: { user: { id: 'mock-id' } }, error: null }),
+        signInWithPassword: async () => ({ data: { user: { id: 'mock-id' } }, error: null }),
         signOut: async () => {},
         onAuthStateChange: () => ({ data: { subscription: { unsubscribe: () => {} } } }),
       },

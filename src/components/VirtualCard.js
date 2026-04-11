@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import styles from './VirtualCard.module.css';
 
 export default function VirtualCard({ className = '' }) {
@@ -10,11 +11,7 @@ export default function VirtualCard({ className = '' }) {
         <div className={styles.cardContent}>
           <div className={styles.cardTop}>
             <div className={styles.cardLogo}>
-              <svg width="24" height="24" viewBox="0 0 28 28" fill="none">
-                <rect x="2" y="4" width="24" height="18" rx="4" stroke="currentColor" strokeWidth="2" />
-                <path d="M2 10h24" stroke="currentColor" strokeWidth="2" />
-                <circle cx="8" cy="16" r="2" fill="var(--color-accent)" />
-              </svg>
+              <Image src="/app-icon.png" alt="LivingCard" width={22} height={22} style={{ borderRadius: 4 }} />
               <span className={styles.cardBrand}>LivingCard</span>
             </div>
             <div className={styles.contactless}>

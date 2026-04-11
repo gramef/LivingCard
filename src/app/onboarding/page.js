@@ -3,6 +3,7 @@
 import { useState, useCallback } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
+import Logo from '@/components/Logo';
 import styles from './onboarding.module.css';
 
 const STEPS = [
@@ -73,10 +74,7 @@ export default function OnboardingPage() {
     <div className={styles.onboardingPage}>
       <div className={styles.onboardingHeader}>
         <Link href="/" className={styles.onboardingLogo}>
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" strokeWidth="2" strokeLinecap="round">
-            <rect x="1" y="4" width="22" height="16" rx="2" /><path d="M1 10h22" />
-          </svg>
-          <span>Living<strong>Card</strong></span>
+          <Logo size="sm" />
         </Link>
         <span className={styles.onboardingStepLabel}>
           Step {currentStep + 1} of {STEPS.length}

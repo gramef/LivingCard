@@ -4,6 +4,7 @@ import { useState, Suspense } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { useAuth } from '@/lib/auth-context';
 import Link from 'next/link';
+import Logo from '@/components/Logo';
 import styles from '../auth.module.css';
 
 export default function LoginPage() {
@@ -45,11 +46,7 @@ function LoginForm() {
         <div className={styles.authCard}>
           <div className={styles.authHeader}>
             <Link href="/" className={styles.authLogo}>
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" strokeWidth="2" strokeLinecap="round">
-                <rect x="1" y="4" width="22" height="16" rx="2" ry="2" />
-                <path d="M1 10h22" />
-              </svg>
-              <span>Living<strong>Card</strong></span>
+              <Logo size="lg" />
             </Link>
             <h1>Welcome back</h1>
             <p>Sign in to access your dashboard</p>

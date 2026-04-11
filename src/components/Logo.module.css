@@ -1,0 +1,54 @@
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  text-decoration: none;
+  color: var(--color-text-primary);
+  flex-shrink: 0;
+}
+
+.logoIcon {
+  border-radius: 6px;
+  flex-shrink: 0;
+  object-fit: contain;
+}
+
+.logoText {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  white-space: nowrap;
+}
+
+.logoAccent {
+  color: var(--color-accent);
+}
+
+/* Size variants */
+.sm .logoText {
+  font-size: var(--text-sm);
+}
+
+.md .logoText {
+  font-size: var(--text-base);
+}
+
+.lg .logoText {
+  font-size: var(--text-lg);
+}
+
+/* Dark background fallback — keep icon clear */
+.sm .logoIcon {
+  width: 24px;
+  height: 24px;
+}
+
+.md .logoIcon {
+  width: 32px;
+  height: 32px;
+}
+
+.lg .logoIcon {
+  width: 40px;
+  height: 40px;
+}

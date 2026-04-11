@@ -14,6 +14,10 @@ export const metadata = {
     "financial inclusion",
     "Living Card",
   ],
+  icons: {
+    icon: "/app-icon.png",
+    apple: "/app-icon.png",
+  },
   openGraph: {
     title: "Living Card — Credit That Cares",
     description:
@@ -21,12 +25,21 @@ export const metadata = {
     type: "website",
     locale: "en_CA",
     siteName: "Living Card",
+    images: [
+      {
+        url: "/logo-light.png",
+        width: 1024,
+        height: 1024,
+        alt: "LivingCard Logo",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Living Card — Credit That Cares",
     description:
       "Build credit responsibly. Spend only on essentials.",
+    images: ["/logo-light.png"],
   },
 };
 

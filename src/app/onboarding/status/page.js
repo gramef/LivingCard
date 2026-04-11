@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import VirtualCard from '@/components/VirtualCard';
+import Logo from '@/components/Logo';
 import styles from './status.module.css';
 
 const STATUS_STEPS = [
@@ -80,10 +81,7 @@ export default function ApplicationStatusPage() {
       <div className={styles.statusContainer}>
         <div className={styles.statusHeader}>
           <Link href="/" className={styles.statusLogo}>
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" strokeWidth="2" strokeLinecap="round">
-              <rect x="1" y="4" width="22" height="16" rx="2" /><path d="M1 10h22" />
-            </svg>
-            <span>Living<strong>Card</strong></span>
+            <Logo size="md" />
           </Link>
         </div>
 

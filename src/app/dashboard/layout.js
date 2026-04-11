@@ -4,6 +4,7 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useAuth } from '@/lib/auth-context';
+import Logo from '@/components/Logo';
 import styles from './dashboard-layout.module.css';
 
 const NAV_ITEMS = [
@@ -43,10 +44,7 @@ export default function DashboardLayout({ children }) {
       <aside className={`${styles.sidebar} ${sidebarOpen ? styles.sidebarOpen : ''}`}>
         <div className={styles.sidebarHeader}>
           <Link href="/" className={styles.sidebarLogo}>
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" strokeWidth="2" strokeLinecap="round">
-              <rect x="1" y="4" width="22" height="16" rx="2" /><path d="M1 10h22" />
-            </svg>
-            <span>Living<strong>Card</strong></span>
+            <Logo size="md" />
           </Link>
         </div>
 

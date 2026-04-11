@@ -1,3 +1,4 @@
+import Logo from './Logo';
 import styles from './Footer.module.css';
 
 export default function Footer() {
@@ -39,14 +40,7 @@ export default function Footer() {
         <div className={styles.top}>
           <div className={styles.brand}>
             <a href="#" className={styles.logo}>
-              <div className={styles.logoIcon}>
-                <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
-                  <rect x="2" y="4" width="24" height="18" rx="4" stroke="currentColor" strokeWidth="2" />
-                  <path d="M2 10h24" stroke="currentColor" strokeWidth="2" />
-                  <circle cx="8" cy="16" r="2" fill="var(--color-accent)" />
-                </svg>
-              </div>
-              <span>Living<span style={{ color: 'var(--color-accent)' }}>Card</span></span>
+              <Logo size="md" />
             </a>
             <p className={styles.tagline}>
               Credit that cares. Building financial stability for every Canadian.
