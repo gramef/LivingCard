@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import VirtualCard from '@/components/VirtualCard';
@@ -25,6 +25,16 @@ export default function Home() {
     document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
     return () => observer.disconnect();
   }, []);
+
+  const [waitlistSubmitted, setWaitlistSubmitted] = useState(false);
+  const [waitlistEmail, setWaitlistEmail] = useState('');
+
+  const handleWaitlist = (e) => {
+    e.preventDefault();
+    if (waitlistEmail.trim()) {
+      setWaitlistSubmitted(true);
+    }
+  };
 
   return (
     <>
@@ -394,20 +404,35 @@ export default function Home() {
                 Living Card is launching in Ontario, Canada. Join the waitlist to
                 be among the first to experience ethical credit building.
               </p>
-              <form className={styles.waitlistForm} onSubmit={(e) => e.preventDefault()}>
-                <div className="input-inline">
-                  <input
-                    type="email"
-                    className="input"
-                    placeholder="Enter your email address"
-                    id="waitlist-email"
-                    aria-label="Email for waitlist"
-                  />
-                  <button type="submit" className="btn btn-primary">
-                    Join Waitlist
-                  </button>
+              {waitlistSubmitted ? (
+                <div style={{ textAlign: 'center', padding: 'var(--space-5) 0' }}>
+                  <div style={{ fontSize: '3rem', marginBottom: 'var(--space-3)' }}>🎉</div>
+                  <p style={{ color: 'var(--color-accent)', fontWeight: 600, fontSize: 'var(--text-lg)', marginBottom: 'var(--space-2)' }}>
+                    You&apos;re on the list!
+                  </p>
+                  <p style={{ color: 'var(--color-text-secondary)', fontSize: 'var(--text-sm)' }}>
+                    We&apos;ll notify you at <strong style={{color: 'var(--color-text-primary)'}}>{waitlistEmail}</strong> when Living Card is ready.
+                  </p>
                 </div>
-              </form>
+              ) : (
+                <form className={styles.waitlistForm} onSubmit={handleWaitlist}>
+                  <div className="input-inline">
+                    <input
+                      type="email"
+                      className="input"
+                      placeholder="Enter your email address"
+                      id="waitlist-email"
+                      aria-label="Email for waitlist"
+                      value={waitlistEmail}
+                      onChange={(e) => setWaitlistEmail(e.target.value)}
+                      required
+                    />
+                    <button type="submit" className="btn btn-primary">
+                      Join Waitlist
+                    </button>
+                  </div>
+                </form>
+              )}
               <p className={styles.waitlistNote}>
                 No spam. We&apos;ll only email you when Living Card is ready to launch.
               </p>

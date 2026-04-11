@@ -28,7 +28,7 @@ export default function SettingsPage() {
       <div className={inner.panel}>
         <div className={inner.panelHeader}>
           <h2>Profile Information</h2>
-          <button className="btn btn-secondary btn-sm">Edit</button>
+          <button className="btn btn-secondary btn-sm" onClick={() => alert('Profile editing will be available after launch.')}>Edit</button>
         </div>
         <div className={inner.settingsGroup}>
           <div className={inner.settingsRow}>
@@ -106,21 +106,21 @@ export default function SettingsPage() {
               <span className={inner.settingsLabel}>Password</span>
               <span className={inner.settingsDesc}>Last changed 30 days ago</span>
             </div>
-            <button className="btn btn-secondary btn-sm">Change</button>
+            <button className="btn btn-secondary btn-sm" onClick={() => alert('Password change will be available after launch.')}>Change</button>
           </div>
           <div className={inner.settingsRow}>
             <div className={inner.settingsInfo}>
               <span className={inner.settingsLabel}>Two-Factor Authentication</span>
               <span className={inner.settingsDesc}>Add an extra layer of security to your account</span>
             </div>
-            <button className="btn btn-secondary btn-sm">Enable</button>
+            <button className="btn btn-secondary btn-sm" onClick={() => alert('Two-factor authentication will be available after launch.')}>Enable</button>
           </div>
           <div className={inner.settingsRow}>
             <div className={inner.settingsInfo}>
               <span className={inner.settingsLabel}>Active Sessions</span>
               <span className={inner.settingsDesc}>1 device currently logged in</span>
             </div>
-            <button className="btn btn-secondary btn-sm">Manage</button>
+            <button className="btn btn-secondary btn-sm" onClick={() => alert('Session management will be available after launch.')}>Manage</button>
           </div>
         </div>
       </div>
@@ -146,7 +146,7 @@ export default function SettingsPage() {
               <span className={inner.settingsLabel}>Download Statements</span>
               <span className={inner.settingsDesc}>PDF statements for your records</span>
             </div>
-            <button className="btn btn-secondary btn-sm">Download</button>
+            <button className="btn btn-secondary btn-sm" onClick={() => alert('Statement downloads will be available after launch.')}>Download</button>
           </div>
         </div>
       </div>
@@ -162,7 +162,7 @@ export default function SettingsPage() {
               <span className={inner.settingsLabel}>Close Account</span>
               <span className={inner.settingsDesc}>Permanently close your LivingCard account. This action cannot be undone.</span>
             </div>
-            <button className="btn btn-secondary btn-sm" style={{ borderColor: 'var(--color-error)', color: 'var(--color-error)' }}>
+            <button className="btn btn-secondary btn-sm" style={{ borderColor: 'var(--color-error)', color: 'var(--color-error)' }} onClick={() => { if(confirm('Are you sure you want to close your account? This action cannot be undone.')) alert('Account closure will be processed after launch.'); }}>
               Close Account
             </button>
           </div>

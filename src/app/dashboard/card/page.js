@@ -151,14 +151,14 @@ export default function CardPage() {
               <span className={inner.settingsLabel}>Apple Pay</span>
               <span className={inner.settingsDesc}>Use your LivingCard with Apple Pay for contactless payments</span>
             </div>
-            <button className="btn btn-secondary btn-sm">Add to Wallet</button>
+            <button className="btn btn-secondary btn-sm" onClick={() => alert('Apple Pay integration coming soon! Your card will be available in Apple Wallet after launch.')}>Add to Wallet</button>
           </div>
           <div className={inner.settingsRow}>
             <div className={inner.settingsInfo}>
               <span className={inner.settingsLabel}>Google Pay</span>
               <span className={inner.settingsDesc}>Use your LivingCard with Google Pay for tap-to-pay</span>
             </div>
-            <button className="btn btn-secondary btn-sm">Add to Wallet</button>
+            <button className="btn btn-secondary btn-sm" onClick={() => alert('Google Pay integration coming soon! Your card will be available in Google Wallet after launch.')}>Add to Wallet</button>
           </div>
         </div>
       </div>

@@ -178,15 +178,15 @@ function ApplicationDetail({ app, onBack }) {
 
       {app.status === 'pending' || app.status === 'under_review' ? (
         <div className={styles.actionBar}>
-          <button className="btn btn-primary">
+          <button className="btn btn-primary" onClick={() => { alert(`Application ${app.id} for ${app.name} has been approved. A $${app.income >= 3000 ? '500' : '300'} credit limit card will be issued.`); onBack(); }}>
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round"><path d="M20 6L9 17l-5-5" /></svg>
             Approve Application
           </button>
-          <button className="btn btn-secondary" style={{ borderColor: 'var(--color-error)', color: 'var(--color-error)' }}>
+          <button className="btn btn-secondary" style={{ borderColor: 'var(--color-error)', color: 'var(--color-error)' }} onClick={() => { if(confirm(`Decline application ${app.id} for ${app.name}?`)) { alert('Application declined.'); onBack(); } }}>
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round"><path d="M18 6L6 18M6 6l12 12" /></svg>
             Decline
           </button>
-          <button className="btn btn-secondary">Request More Info</button>
+          <button className="btn btn-secondary" onClick={() => alert(`Request for additional information sent to ${app.email}.`)}>Request More Info</button>
         </div>
       ) : null}
     </div>

@@ -90,7 +90,7 @@ export default function AdminUsersPage() {
                   )}
                 </td>
                 <td>
-                  <button className={styles.reviewBtn}>View</button>
+                  <button className={styles.reviewBtn} onClick={() => alert(`User Details:\n\nName: ${user.name}\nEmail: ${user.email}\nStatus: ${user.status}\nJoined: ${user.joined}\nBalance: $${user.balance.toFixed(2)}\nCredit Score: ${user.score || 'N/A'}`)}>View</button>
                 </td>
               </tr>
             ))}

@@ -1,6 +1,7 @@
 'use client';
 
 import VirtualCard from '@/components/VirtualCard';
+import Link from 'next/link';
 import styles from './dashboard.module.css';
 
 const MOCK_TRANSACTIONS = [
@@ -88,14 +89,14 @@ export default function DashboardHome() {
             <VirtualCard />
           </div>
           <div className={styles.cardActions}>
-            <button className="btn btn-secondary">
+            <Link href="/dashboard/card" className="btn btn-secondary">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round"><rect x="3" y="11" width="18" height="11" rx="2" /><path d="M7 11V7a5 5 0 0110 0v4" /></svg>
               Lock Card
-            </button>
-            <button className="btn btn-secondary">
+            </Link>
+            <Link href="/dashboard/card" className="btn btn-secondary">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round"><circle cx="12" cy="12" r="10" /><path d="M12 16v-4M12 8h.01" /></svg>
               Details
-            </button>
+            </Link>
           </div>
         </div>
 
